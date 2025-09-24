@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSea Computers - Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            color: #e6f1ff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .logo-container {
+            margin-bottom: 40px;
+        }
+        
+        .logo-image {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo-text {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #64ffda, #e6f1ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: #8892b0;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+        
+        .coming-soon {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #64ffda;
+            text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+        }
+        
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: #a8b2d1;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .feature {
+            background: rgba(100, 255, 218, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            width: 250px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(100, 255, 218, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #64ffda;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #e6f1ff;
+        }
+        
+        .feature-desc {
+            font-size: 0.95rem;
+            color: #8892b0;
+        }
+        
+        .contact-info {
+            background: rgba(17, 34, 64, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #64ffda;
+        }
+        
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #64ffda;
+        }
+        
+        .contact-text {
+            font-size: 1.1rem;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            background: rgba(100, 255, 218, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 100px;
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #64ffda;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            color: #8892b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .notify-btn {
+            background: linear-gradient(90deg, #64ffda, #4ecdc4);
+            color: #0a192f;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+        }
+        
+        .notify-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+        }
+        
+        .footer {
+            margin-top: 50px;
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+        
+        .floating-elements {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: rgba(100, 255, 218, 0.05);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+        
+        .element-1 {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-duration: 20s;
+        }
+        
+        .element-2 {
+            width: 70px;
+            height: 70px;
+            top: 70%;
+            left: 85%;
+            animation-duration: 25s;
+        }
+        
+        .element-3 {
+            width: 50px;
+            height: 50px;
+            top: 25%;
+            left: 80%;
+            animation-duration: 18s;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 2.5rem;
+            }
+            
+            .coming-soon {
+                font-size: 2.5rem;
+            }
+            
+            .description {
+                font-size: 1rem;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .countdown {
+                gap: 10px;
+            }
+            
+            .countdown-item {
+                min-width: 80px;
+                padding: 15px;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element element-1"></div>
+        <div class="floating-element element-2"></div>
+        <div class="floating-element element-3"></div>
+    </div>
+    
+    <div class="container">
+        <div class="logo-container">
+            <!-- Placeholder for your logo image -->
+            <div class="logo-image" style="background: #64ffda; height: 200px; display: flex; align-items: center; justify-content: center; color: #0a192f; font-size: 1.5rem;">
+                [TechSea Computers Logo]
+            </div>
+            <h1 class="logo-text">TECHSEA COMPUTERS</h1>
+            <p class="tagline">Quality in every device</p>
+        </div>
+        
+        <h2 class="coming-soon">Website Coming Soon</h2>
+        
+        <p class="description">
+            We're crafting an exceptional online experience to serve all your technology needs. 
+            TechSea Computers will be your trusted partner for high-quality devices, expert repairs, 
+            and innovative solutions that propel your digital journey forward.
+        </p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">💻</div>
+                <h3 class="feature-title">Quality Devices</h3>
+                <p class="feature-desc">Premium laptops, desktops, and accessories from trusted brands</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🔧</div>
+                <h3 class="feature-title">Expert Repairs</h3>
+                <p class="feature-desc">Professional repair services for all your computer needs</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title">Fast Service</h3>
+                <p class="feature-desc">Quick turnaround times without compromising on quality</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <h3 class="feature-title">Trusted Support</h3>
+                <p class="feature-desc">Dedicated customer service that puts your needs first</p>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <h3 class="contact-title">Get in Touch</h3>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span class="contact-text">+2547 5723 6138</span>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <span class="contact-text">info@techseacomputers.com</span>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">🌐</span>
+                    <span class="contact-text">techseacomputers.com</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+        
+        <button class="notify-btn">Notify Me When We Launch</button>
+        
+        <div class="footer">
+            <p>&copy; 2023 TechSea Computers. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown timer (set to 30 days from now)
+        const countdownDate = new Date();
+        countdownDate.setDate(countdownDate.getDate() + 30);
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.querySelector('.countdown').innerHTML = "<h2>We're Live!</h2>";
+            }
+        }
+        
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Notification button functionality
+        document.querySelector('.notify-btn').addEventListener('click', function() {
+            this.textContent = 'Thank You! We\'ll Notify You';
+            this.style.background = 'linear-gradient(90deg, #4ecdc4, #44a08d)';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                this.textContent = 'Notify Me When We Launch';
+                this.style.background = 'linear-gradient(90deg, #64ffda, #4ecdc4)';
+                this.disabled = false;
+            }, 3000);
+        });
+        
+        // Add floating elements interaction
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            const elements = document.querySelectorAll('.floating-element');
+            elements.forEach((el, index) => {
+                const speed = 0.5 + (index * 0.2);
+                const xMove = (x - 0.5) * 20 * speed;
+                const yMove = (y - 0.5) * 20 * speed;
+                
+                el.style.transform = `translate(${xMove}px, ${yMove}px) rotate(${x * 360}deg)`;
+            });
+        });
+    </script>
+</body>
+</html>
